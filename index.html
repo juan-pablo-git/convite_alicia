@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite Alicia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #ec4899;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Container do vídeo */
+        #video_boas_vindas, video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        /* Imagem da Placa */
+        #placa_tropical {
+            width: 100%;
+            display: none;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        #placa_tropical img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        /* Div com as informações da festa */
+        #convite_texto {
+            display: none;
+            padding: 20px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        #convite_texto h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        #convite_texto p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        /* Estilo para a caixinha do cronômetro */
+        .contador {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .tempo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .tempo-item span {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+
+        /* Novos Estilos: Botões e Formulário de Confirmação */
+        .acoes-container {
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        /* Botão de Localização */
+        .btn-local {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #ec4899;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+
+        .btn-local:hover {
+            transform: scale(1.05);
+        }
+
+        /* Caixa de RSVP */
+        .rsvp-box {
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .rsvp-box p {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* Input de Nome */
+        .rsvp-box input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            text-align: center;
+            outline: none;
+        }
+
+        /* Botão Chamativo de Confirmar Presença */
+        .btn-rsvp {
+            background: linear-gradient(135deg, #22c55e, #16a34a); /* Verde bem chamativo estilo WhatsApp */
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .btn-rsvp:hover {
+            transform: scale(1.03);
+            background: linear-gradient(135deg, #16a34a, #15803d);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Vídeo -->
+    <div id="video_boas_vindas">
+        <video autoplay muted playsinline>
+            <source src="VIDEO ALICIA.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+    </div>
+
+    <!-- Placa -->
+    <div id="placa_tropical">
+        <img src="Placa Tropical da Alicia_ 1 Ano.png" alt="Convite Alicia">
+    </div>
+
+    <!-- Texto do Convite -->
+    <div id="convite_texto">
+        <h1>Aniversário da Alicia</h1>
+        <p>Nossa Alicia está completando seu primeiro aninho!</p>
+        
+        <!-- Cronômetro Dinâmico -->
+        <div class="contador">
+            <div class="tempo-item"><strong id="dias">00</strong><span>Dias</span></div>
+            <div class="tempo-item"><strong id="horas">00</strong><span>Horas</span></div>
+            <div class="tempo-item"><strong id="minutos">00</strong><span>Minutos</span></div>
+            <div class="tempo-item"><strong id="segundos">00</strong><span>Segundos</span></div>
+        </div>
+
+        <p>Para celebrar esse momento tão especial, preparamos um dia com gostinho de verão, piscina, comidinhas deliciosas e muita diversão!</p>
+        
+        <p>
+            E, para essa comemoração ficar ainda melhor, só falta você! Sua presença vai tornar esse dia incrível!
+        </p>
+        <h3>Celebração</h3>
+        <p><strong>Domingo, 8 de novembro de 2026 às 10:00</strong></p>
+        <p>Rua Canaã, 1080</p>
+
+        <!-- Botões e Confirmação -->
+        <div class="acoes-container">
+            <!-- Botão do Google Maps -->
+            <a href="https://maps.google.com/?q=Rua+Canaã,+1080" target="_blank" class="btn-local">
+                📍 Ver Localização no Mapa
+            </a>
+
+            <!-- Bloco de Confirmação via WhatsApp -->
+            <div class="rsvp-box">
+                <p>Confirme sua presença</p>
+                <input type="text" id="nomeConvidado" placeholder="Digite seu nome e sobrenome">
+                <button id="btnConfirmar" class="btn-rsvp">✨ Confirmar Presença</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Lógica do vídeo e revelação da página
+        const video = document.querySelector('video');
+        const videoContainer = document.getElementById('video_boas_vindas');
+        const placaTropical = document.getElementById('placa_tropical');
+        const conviteTexto = document.getElementById('convite_texto');
+
+        video.addEventListener('ended', () => {
+            videoContainer.style.display = 'none';
+            placaTropical.style.display = 'block';
+            conviteTexto.style.display = 'block';
+        });
+
+        // Lógica do Cronômetro Regressivo
+        const dataAlvo = new Date('November 8, 2026 10:00:00').getTime();
+
+        const atualizarContador = setInterval(() => {
+            const agora = new Date().getTime();
+            const diferenca = dataAlvo - agora;
+
+            if (diferenca < 0) {
+                clearInterval(atualizarContador);
+                document.querySelector('.contador').innerHTML = "<p>O grande dia chegou!</p>";
+                return;
+            }
+
+            const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+            document.getElementById('dias').innerText = String(dias).padStart(2, '0');
+            document.getElementById('horas').innerText = String(horas).padStart(2, '0');
+            document.getElementById('minutos').innerText = String(minutos).padStart(2, '0');
+            document.getElementById('segundos').innerText = String(segundos).padStart(2, '0');
+        }, 1000);
+
+        // Lógica do Botão de Confirmação de Presença (WhatsApp)
+        document.getElementById('btnConfirmar').addEventListener('click', () => {
+            const nome = document.getElementById('nomeConvidado').value.trim();
+            
+            if (nome === "") {
+                alert("Por favor, digite seu nome antes de confirmar!");
+                document.getElementById('nomeConvidado').focus();
+                return;
+            }
+
+            // ⚠️ ATENÇÃO: Substitua os números abaixo pelo seu WhatsApp (DDI + DDD + Número)
+            // Exemplo para Fortaleza/CE: 5585988887777
+            const seuNumeroWhatsApp = "558587473548"; 
+
+            const textoMensagem = encodeURIComponent(`Olá! Confirmo a presença de *${nome}* no aniversário de 1 ano da Alicia! 🎉`);
+            
+            // Abre o WhatsApp com a mensagem pronta
+            window.open(`https://wa.me/${seuNumeroWhatsApp}?text=${textoMensagem}`, '_blank');
+        });
+    </script>
+</body>
+</html>
