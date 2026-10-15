@@ -14,16 +14,13 @@
     <meta property="og:description" content="Confira os detalhes e confirme sua presença!" />
 
     <!-- Link Direto da Imagem (caminho absoluto) -->
-    <meta property="og:image"
-        content="https://convitealicia-nu.vercel.app/aliciaFeliz.jpeg" />
-    <meta property="og:image:secure_url"
-        content="https://convitealicia-nu.vercel.app/aliciaFeliz.jpeg" />
+    <meta property="og:image" content="https://convitealicia-nu.vercel.app/aliciaFeliz.jpeg" />
+    <meta property="og:image:secure_url" content="https://convitealicia-nu.vercel.app/aliciaFeliz.jpeg" />
 
     <!-- Para garantir o formato grande em redes como Twitter/X -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Aniversário da Alicia" />
-    <meta name="twitter:image"
-        content="https://convitealicia-nu.vercel.app/aliciaFeliz.jpeg" />
+    <meta name="twitter:image" content="https://convitealicia-nu.vercel.app/aliciaFeliz.jpeg" />
 
     <!-- Proporção recomendada para o card grande -->
     <meta property="og:image:width" content="1200" />
@@ -192,6 +189,31 @@
             transform: scale(1.03);
             background: linear-gradient(135deg, #16a34a, #15803d);
         }
+
+        .card-data-hora {
+            background-color: #ffffff;
+            color: #ec4899;
+            /* Texto rosa sobre fundo branco */
+            padding: 15px;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 90%;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-data-hora .data {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .card-data-hora .hora {
+            font-size: 1.1rem;
+            background-color: #fce7f3;
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
     </style>
 </head>
 
@@ -230,7 +252,10 @@
             E, para essa comemoração ficar ainda melhor, só falta você! Sua presença vai tornar esse dia incrível!
         </p>
         <h3>Celebração</h3>
-        <p><strong>Domingo, 8 de novembro de 2026 às 10:00</strong></p>
+        <div class="card-data-hora">
+            <div class="data">🗓️ Domingo, 8 de novembro de 2026</div>
+            <div class="hora">⏰ Às 10:00 horas</div>
+        </div>
         <p>Rua Canaã, 1080</p>
 
         <!-- Botões e Confirmação -->
