@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <!-- Título e Nome do Site -->
-<meta property="og:title" content="Aniversário da Alicia" />
-<meta property="og:site_name" content="Aniversário da Alicia" />
 
-<!-- Descrição curta no card (opcional) -->
-<meta property="og:description" content="Confira os detalhes e confirme sua presença!" />
-
-<!-- Link Direto da Imagem (caminho absoluto) -->
-<meta property="og:image" content="https://convitealicia-nu.vercel.app/Placa%20Tropical%20da%20Alicia_%201%20Ano.png" />
-<meta property="og:image:secure_url" content="https://convitealicia-nu.vercel.app/Placa%20Tropical%20da%20Alicia_%201%20Ano.png" />
-
-<!-- Para garantir o formato grande em redes como Twitter/X -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Aniversário da Alicia" />
-<meta name="twitter:image" content="https://convitealicia-nu.vercel.app/Placa%20Tropical%20da%20Alicia_%201%20Ano.png" />
-
-<!-- Proporção recomendada para o card grande -->
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://convitealicia-nu.vercel.app/" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Convite Alicia</title>
+    <!-- Título e Nome do Site -->
+    <meta property="og:title" content="Aniversário da Alicia" />
+    <meta property="og:site_name" content="Aniversário da Alicia" />
+
+    <!-- Descrição curta no card (opcional) -->
+    <meta property="og:description" content="Confira os detalhes e confirme sua presença!" />
+
+    <!-- Link Direto da Imagem (caminho absoluto) -->
+    <meta property="og:image"
+        content="https://convitealicia-nu.vercel.app/Placa%20Tropical%20da%20Alicia_%201%20Ano.png" />
+    <meta property="og:image:secure_url"
+        content="https://convitealicia-nu.vercel.app/Placa%20Tropical%20da%20Alicia_%201%20Ano.png" />
+
+    <!-- Para garantir o formato grande em redes como Twitter/X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aniversário da Alicia" />
+    <meta name="twitter:image"
+        content="https://convitealicia-nu.vercel.app/Placa%20Tropical%20da%20Alicia_%201%20Ano.png" />
+
+    <!-- Proporção recomendada para o card grande -->
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://convitealicia-nu.vercel.app/" />
     <style>
         * {
             margin: 0;
@@ -32,7 +37,8 @@
             box-sizing: border-box;
         }
 
-        body, html {
+        body,
+        html {
             width: 100%;
             min-height: 100vh;
             background-color: #ec4899;
@@ -42,7 +48,8 @@
         }
 
         /* Container do vídeo */
-        #video_boas_vindas, video {
+        #video_boas_vindas,
+        video {
             width: 100vw;
             height: 100vh;
             object-fit: cover;
@@ -130,7 +137,7 @@
             padding: 12px 25px;
             border-radius: 30px;
             font-size: 1rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s;
         }
 
@@ -168,7 +175,8 @@
 
         /* Botão Chamativo de Confirmar Presença */
         .btn-rsvp {
-            background: linear-gradient(135deg, #22c55e, #16a34a); /* Verde bem chamativo estilo WhatsApp */
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            /* Verde bem chamativo estilo WhatsApp */
             color: white;
             border: none;
             padding: 14px;
@@ -186,6 +194,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- Vídeo -->
@@ -205,7 +214,7 @@
     <div id="convite_texto">
         <h1>Aniversário da Alicia</h1>
         <p>Nossa Alicia está completando seu primeiro aninho!</p>
-        
+
         <!-- Cronômetro Dinâmico -->
         <div class="contador">
             <div class="tempo-item"><strong id="dias">00</strong><span>Dias</span></div>
@@ -214,8 +223,9 @@
             <div class="tempo-item"><strong id="segundos">00</strong><span>Segundos</span></div>
         </div>
 
-        <p>Para celebrar esse momento tão especial, preparamos um dia com gostinho de verão, piscina, comidinhas deliciosas e muita diversão!</p>
-        
+        <p>Para celebrar esse momento tão especial, preparamos um dia com gostinho de verão, piscina, comidinhas
+            deliciosas e muita diversão!</p>
+
         <p>
             E, para essa comemoração ficar ainda melhor, só falta você! Sua presença vai tornar esse dia incrível!
         </p>
@@ -279,7 +289,7 @@
         // Lógica do Botão de Confirmação de Presença (WhatsApp)
         document.getElementById('btnConfirmar').addEventListener('click', () => {
             const nome = document.getElementById('nomeConvidado').value.trim();
-            
+
             if (nome === "") {
                 alert("Por favor, digite seu nome antes de confirmar!");
                 document.getElementById('nomeConvidado').focus();
@@ -288,13 +298,14 @@
 
             // ⚠️ ATENÇÃO: Substitua os números abaixo pelo seu WhatsApp (DDI + DDD + Número)
             // Exemplo para Fortaleza/CE: 5585988887777
-            const seuNumeroWhatsApp = "558587473548"; 
+            const seuNumeroWhatsApp = "558587473548";
 
             const textoMensagem = encodeURIComponent(`Olá! Confirmo a presença de *${nome}* no aniversário de 1 ano da Alicia! 🎉`);
-            
+
             // Abre o WhatsApp com a mensagem pronta
             window.open(`https://wa.me/${seuNumeroWhatsApp}?text=${textoMensagem}`, '_blank');
         });
     </script>
 </body>
+
 </html>
